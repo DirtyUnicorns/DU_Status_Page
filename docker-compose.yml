@@ -1,0 +1,11 @@
+version: "3.1"
+services:
+  dustatus:
+    image: jmzsoftware/du_status_page:latest
+    container_name: dustatus
+    restart: unless-stopped
+    environment:
+      - API_KEY=<HealthCheck.io API Key>
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./values:/values
